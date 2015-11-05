@@ -7,12 +7,13 @@ TODO
 ### Books
 
 #### Get genres list  
-URL: /api/v1/genres/
+URL: /api/v1/books/genres/
 Method: GET  
-Example:  /api/v1/genres
+Example:  /api/v1/genres/
+
 
 #### Get books by genre  
-URL: /api/v1/books/
+URL: /api/v1/books/list
 Method: GET  
 Parameters:  
 genre=[string]   
