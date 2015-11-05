@@ -1,0 +1,104 @@
+[
+  {
+    "model": "Books.Genre",
+    "pk": 1,
+    "fields": {
+      "name": "Detective"
+    }
+  },
+  {
+    "model": "Books.Genre",
+    "pk": 2,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "Books.Genre",
+    "pk": 3,
+    "fields": {
+      "name": "Science Fiction"
+    }
+  },
+  {
+    "model": "Books.Genre",
+    "pk": 4,
+    "fields": {
+      "name": "History"
+    }
+  },
+
+
+  {
+    "model": "Books.Book",
+    "pk": 1,
+    "fields": {
+      "title": "Poirot",
+      "pic": "",
+      "author": "Agatha Cristie",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 1
+    }
+  },
+  {
+    "model": "Books.Book",
+    "pk": 2,
+    "fields": {
+      "title": "Lord of the Rings",
+      "pic": "",
+      "author": "J.R.R. Tolkien",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 2
+    }
+  },
+  {
+    "model": "Books.Book",
+    "pk": 3,
+    "fields": {
+      "title": "Foundation",
+      "pic": "",
+      "author": "Isaac Asimov",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 3
+    }
+  },
+  {
+    "model": "Books.Book",
+    "pk": 4,
+    "fields": {
+      "title": "Three musketeers",
+      "pic": "",
+      "author": "Alexander Dumas",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 4
+    }
+  },
+  {
+    "model": "Books.Book",
+    "pk": 5,
+    "fields": {
+      "title": "Miss Marple",
+      "pic": "",
+      "author": "Agatha Cristie",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 1
+    }
+  },
+  {
+    "model": "Books.Book",
+    "pk": 6,
+    "fields": {
+      "title": "Sherlock Homles",
+      "pic": "",
+      "author": "Arthur Conan Doyle",
+      "description": "Description",
+      "rating": 7.5,
+      "genre": 1
+    }
+  }
+]

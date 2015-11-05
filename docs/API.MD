@@ -18,7 +18,7 @@ Parameters:
 genre=[string]   
 Example:  /api/v1/books/?genre=detective
 
-### Rate book
+#### Rate book
 ... 
 Method: POST  
 Parameters:   
@@ -31,7 +31,7 @@ vote=[integer], vote value, 0-10
 }  
 ```
 
-### Add book to list
+#### Add book to list
 Method: POST  
 ```javascript  
 {  
@@ -39,7 +39,7 @@ Method: POST
 }  
 ```
 
-### Mark book as read
+#### Mark book as read
 Method: POST  
 
 
