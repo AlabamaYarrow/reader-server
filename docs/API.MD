@@ -48,10 +48,10 @@ Authentication: Token 71678f82c1dd34...
   
 #### Vote for book  
 Authentication required.  
-URL: /api/v1/books/rate  
+URL: /api/v1/books/rate   
 Method: POST  
-Parameters:    
-book=[integer], book ID   
+Parameters:  
+book=[integer], book ID  
 vote=[integer], vote value, 0-10  
 ```javascript  
 {  
@@ -78,6 +78,20 @@ Response:
 URL: /api/v1/books/genres/  
 Method: GET    
 Example:  /api/v1/genres/  
+Response:  
+```javascript
+[
+  {
+    "id": 1,
+    "name": "Detective"
+  },
+  {
+    "id": 2,
+    "name": "Fantasy"
+  },
+  ...
+]
+```
 
 #### Get books by genre    
 URL: /api/v1/books/list  
@@ -85,20 +99,70 @@ Method: GET
 Parameters:  
 genre=[string]   
 Example:  /api/v1/books/?genre=detective  
+Response:
+```javascript
+[
+  {
+    "id": 1,
+    "title": "Poirot",
+    "author": "Agatha Cristie",
+    "pic": "",
+    "description": "Description",
+    "rating": 7
+  },
+  {
+    "id": 5,
+    "title": "Miss Marple",
+    "author": "Agatha Cristie",
+    "pic": "",
+    "description": "Description",
+    "rating": 7
+  },
+  ...
+]
+```
 
-#### Add book to list  
-Method: POST    
-```javascript  
+### Reader  
+
+#### Get user's books  
+URL: /api/v1/users/books/  
+Method: GET   
+Parameters:   
+user=[integer]  
+Example:  /api/v1/books/?user=2    
+Response:  
+```javascript
+{
+  "planned_books": [],
+  "completed_books": [
+    {
+      "id": 1,
+      "title": "Poirot",
+      "author": "Agatha Cristie",
+      "pic": "",
+      "description": "Description",
+      "rating": 7
+    }
+  ]
+}
+```
+  
+#### Add book to planned books list  
+URL: /api/v1/users/books/  
+Method: POST  
+```javascript   
 {  
     book: 11  
 }  
 ```
+Response: None  
 
 #### Mark book as read   
-TODO  
+URL: /api/v1/users/books/[Book ID]     
+Method: PUT   
+Response: None  
 
-
-### User  
-
-#### Get user's books  
-TODO  
+#### Remove book  
+URL: /api/v1/users/books/[Book ID]         
+Method: DELETE  
+Response: None  

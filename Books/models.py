@@ -1,5 +1,4 @@
 from django.db import models
-from Accounts.models import ReaderUser
 from django.contrib.auth.models import User
 
 

@@ -1,6 +1,4 @@
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView
-from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from .models import Genre, Book, RatingVote
 from .serializers import GenreSerializer, BookSerializer, VoteSerializer
@@ -29,7 +27,6 @@ class ListBooksByGenre(APIView):
         books = Book.objects.filter(genre=genre)
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)
-
 
 
 class RateBook(APIView):
