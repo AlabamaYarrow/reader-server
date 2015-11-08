@@ -1,8 +1,12 @@
 from rest_framework.views import APIView
+from rest_framework.generics import CreateAPIView
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from .models import Genre, Book
-from .serializers import GenreSerializer, BookSerializer
+from .models import Genre, Book, RatingVote
+from .serializers import GenreSerializer, BookSerializer, VoteSerializer
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class ListGenres(APIView):
@@ -27,16 +31,25 @@ class ListBooksByGenre(APIView):
         return Response(serializer.data)
 
 
-class BookViewSet(ViewSet):
 
-    def create(self):
-        # add lo list
-        pass
+class RateBook(APIView):
+    permission_classes = (IsAuthenticated,)
 
-    def update(self):
-        # mark as read
-        pass
+    @staticmethod
+    def post(self):
+        try:
+            book = self.data['book']
+            vote_value = self.data['vote_value']
+        except KeyError:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self):
-        # delete from list
-        pass
+        try:
+            book = Book.objects.get(pk=book)
+        except ObjectDoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        vote = RatingVote(user=self.user, book=book, vote_value = vote_value)
+        vote.save()
+        serializer = VoteSerializer(vote)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+

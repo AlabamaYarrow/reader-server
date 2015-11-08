@@ -1,5 +1,6 @@
 from django.db import models
 from Accounts.models import ReaderUser
+from django.contrib.auth.models import User
 
 
 class Genre(models.Model):
@@ -16,8 +17,8 @@ class Book(models.Model):
 
 
 class RatingVote(models.Model):
-    value = models.IntegerField()
-    user = models.ForeignKey(ReaderUser)
+    vote_value = models.IntegerField()
+    user = models.ForeignKey(User)
     book = models.ForeignKey(Book)
 
 
