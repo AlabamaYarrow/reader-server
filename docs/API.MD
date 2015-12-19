@@ -98,7 +98,7 @@ URL: /api/v1/books/list
 Method: GET  
 Parameters:  
 genre=[string]   
-Example:  /api/v1/books/list/?genre_name=Detective
+Example:  /api/v1/books/list/?genre_name=Detective  
 Response:
 ```javascript
 [
