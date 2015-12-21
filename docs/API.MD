@@ -40,8 +40,8 @@ Response:
 ```
   
 #### Authenticated requests  
-To make request authenticated, add Authentication header with value "Token [token]".    
-Authentication: Token 71678f82c1dd34...  
+To make request authenticated, add Authorization header with value "Token [token]".    
+Authorization: Token 71678f82c1dd34...  
   
   
 ### Books  
