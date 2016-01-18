@@ -48,7 +48,7 @@ Authorization: Token 71678f82c1dd34...
   
 #### Vote for book  
 Authentication required.  
-URL: /api/v1/books/rate   
+URL: /api/v1/books/rate/   
 Method: POST  
 Parameters:  
 book=[integer], book ID  
@@ -158,11 +158,11 @@ Method: POST
 Response: None  
 
 #### Mark book as read   
-URL: /api/v1/users/books/[Book ID]     
+URL: /api/v1/users/books/[Book ID]/     
 Method: PUT   
 Response: None  
 
 #### Remove book  
-URL: /api/v1/users/books/[Book ID]         
+URL: /api/v1/users/books/[Book ID]/         
 Method: DELETE  
 Response: None  
