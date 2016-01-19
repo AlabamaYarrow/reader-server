@@ -8,7 +8,7 @@ class Genre(models.Model):
 
 class Book(models.Model):
     title = models.CharField('Title', max_length=256)
-    pic = models.CharField('Pic', max_length=256)
+    pic = models.TextField()
     author = models.CharField('Author', max_length=256)
     description = models.TextField()
     rating = models.FloatField()
