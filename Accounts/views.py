@@ -54,7 +54,11 @@ class BookViewSet(ViewSet):
 
     @staticmethod
     def update(self, pk):
-        reader = ReaderUser.objects.get(user=self.user)
+        try:
+            reader = ReaderUser.objects.get(user=self.user)
+        except ObjectDoesNotExist:
+            reader = ReaderUser(user=self.user)
+            reader.save()
         try:
             book = Book.objects.get(pk=pk)
         except ObjectDoesNotExist:
